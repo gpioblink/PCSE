@@ -68,7 +68,7 @@ int main(int argc,char *argv[]) {
 
     double st, en;
 
-    st = e_time();
+    
     // inject random numbers
     int i;
     for(i = 0; i < N*N; i++) {
@@ -76,27 +76,29 @@ int main(int argc,char *argv[]) {
         B[i] = rand_double();
         C[i] = rand_double();
     }
-    en = e_time();
-
-    printf("The Elapsed time is %.16f sec\n", en-st);
 
     /* if you want to check whether this programm is correct,
        uncomment below code
-
+       
     printf("[B]\n");
     mat_print(B, N);
 
     printf("[C]\n");
     mat_print(C, N);
+    */
 
+    st = e_time();
     mat_mul(A, B, C, N);
+    en = e_time();
 
+    /*
     printf("[A]\n");
     mat_print(A, N);
-    
+    */
 
+    printf("The Elapsed time is %.16f sec\n", en-st);
+    
     free(A);
     free(B);
     free(C);
-    */
 }
