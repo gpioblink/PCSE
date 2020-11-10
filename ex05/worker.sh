@@ -1,4 +1,4 @@
-#!/bin/bash -xe
+#!/bin/bash
 
 OUTPUT_NAME=${1:-data}
 NPROC=${2:-1}
@@ -15,9 +15,9 @@ sum=0
 for j in `seq $N`
 do
 
-time=`(time mpirun -np $i ./pi $NPROC > /dev/null 2>&1 ) 2>&1 > /dev/null`
+time=`(time mpirun -np $NPROC ./pi $i > /dev/null 2>&1 ) 2>&1`
 sum=`echo "scale=10; $time + $sum" | bc`
-echo $result
+echo $time
 
 done
 
@@ -31,8 +31,7 @@ echo "set terminal png" >> tmp.plt
 echo "set output '$OUTPUT_NAME.png'" >> tmp.plt
 
 echo "set grid" >> tmp.plt
-echo "set xlabel 'number of divisions in the numerical integration x 1000'" >> 
-tmp.plt
+echo "set xlabel 'number of divisions in the numerical integration x 1000'" >> tmp.plt
 echo "set ylabel 'elapsed time'" >> tmp.plt
 echo "set logscale" >> tmp.plt
 echo "plot '$OUTPUT_NAME.dat' with linespoints linestyle 1" >> tmp.plt
