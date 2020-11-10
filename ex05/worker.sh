@@ -5,6 +5,8 @@ NPROC=${2:-1}
 N=${3:-5}
 echo "0 0" > $OUTPUT_NAME.dat
 
+TIMEFORMAT="%R"
+
 for i in 1000 10000 100000
 do
 
@@ -13,7 +15,7 @@ sum=0
 for j in `seq $N`
 do
 
-time=`(time mpirun -np $NPROC ./pi $i) 2>&1 > /dev/null`
+time=`(time mpirun -np $i ./pi $NPROC > /dev/null 2>&1 ) 2>&1 > /dev/null`
 sum=`echo "scale=10; $time + $sum" | bc`
 echo $result
 
