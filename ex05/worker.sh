@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -xe
 
 OUTPUT_NAME=${1:-data}
 NPROC=${2:-1}
@@ -13,8 +13,7 @@ sum=0
 for j in `seq $N`
 do
 
-result=`mpirun -np $NPROC ./pi $i`
-time=`echo $result | awk '{print $5}'`
+time=`(time mpirun -np $NPROC ./pi $i) 2>&1 > /dev/null`
 sum=`echo "scale=10; $time + $sum" | bc`
 echo $result
 
