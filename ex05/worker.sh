@@ -32,7 +32,7 @@ echo "set output '$OUTPUT_NAME.png'" >> tmp.plt
 
 echo "set grid" >> tmp.plt
 echo "set xlabel 'number of divisions in the numerical integration x 1000'" >> tmp.plt
-echo "set ylabel 'elapsed time'" >> tmp.plt
+echo "set ylabel 'elapsed time [sec]'" >> tmp.plt
 echo "set logscale" >> tmp.plt
 echo "plot '$OUTPUT_NAME.dat' with linespoints linestyle 1" >> tmp.plt
 
