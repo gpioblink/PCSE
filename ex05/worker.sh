@@ -2,7 +2,7 @@
 
 OUTPUT_NAME=${1:-data}
 NPROC=${2:-1}
-N=${3:-5}
+N=${3:-10}
 echo "0 0" > $OUTPUT_NAME.dat
 
 TIMEFORMAT="%R"
