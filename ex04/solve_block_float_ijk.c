@@ -97,22 +97,22 @@ int main(int argc,char *argv[]) {
 
     /* if you want to check whether this programm is correct,
        uncomment below code
-    */ 
+    
     printf("[B]\n");
     mat_print(B, N);
 
     printf("[C]\n");
     mat_print(C, N);
-    
+    */ 
 
     st = e_time();
     mat_mma(A, B, C, NB, b, N);
     en = e_time();
 
-
+    /*
     printf("[A]\n");
     mat_print(A, N);
-
+    */
 
     printf("The Elapsed time is %.16f sec\n", en-st);
 
