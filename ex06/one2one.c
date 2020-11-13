@@ -20,7 +20,7 @@ int main(int argc, char *argv[] )
     int i;
     for(i=1; i<np; i++) {
       MPI_Recv(&data, 1, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
-      printf("receive %d from %d\n", data, id);
+      printf("receive %d from %d\n", data, i);
     }
   }
 
