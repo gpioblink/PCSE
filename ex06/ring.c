@@ -10,7 +10,7 @@ int main(int argc, char *argv[] )
   // 自分のidを取得
   MPI_Comm_rank(MPI_COMM_WORLD, &id);
 
-  int data = (id%2 == 0) ? 1 : 100;
+  int data = (id%2) ? 1 : 100;
   MPI_Status status;
 
   // 隣の番号を計算
@@ -25,7 +25,7 @@ int main(int argc, char *argv[] )
   MPI_Recv(&a, 1, MPI_INT, previd, 0, MPI_COMM_WORLD, &status);
   b = id;
   MPI_Recv(&c, 1, MPI_INT, nextid, 0, MPI_COMM_WORLD, &status);
-  printf("I'm %d. Neighbor is %d and %d. Average is %lf\n", id, previd, nextid, (a+b+c)/3.0);
+  printf("I'm %d(=%d). Neighbor is %d(=%d) and %d(=%d). Average is %lf\n", id, b, previd, a, nextid, c, (a+b+c)/3.0);
 
   MPI_Finalize();
   return 0;
