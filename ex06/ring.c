@@ -25,7 +25,7 @@ int main(int argc, char *argv[] )
   MPI_Recv(&a, 1, MPI_INT, previd, 0, MPI_COMM_WORLD, &status);
   b = id;
   MPI_Recv(&c, 1, MPI_INT, nextid, 0, MPI_COMM_WORLD, &status);
-  printf("I'm %d. Neighbor is %d and %d. Average is %lf\n", id, previd, nextid, (a+b+c)/3.0, i);
+  printf("I'm %d. Neighbor is %d and %d. Average is %lf\n", id, previd, nextid, (a+b+c)/3.0);
 
   MPI_Finalize();
   return 0;
