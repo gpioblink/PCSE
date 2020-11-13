@@ -17,8 +17,11 @@ int main(int argc, char *argv[] )
     data = id * id;
     MPI_Send(&data, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
   } else {
-    MPI_Recv(&data, 1, MPI_INT, MPI_ANY_SOURCE, 0, MPI_COMM_WORLD, &status);
-    printf("receive %d from %d\n", data, id);
+    int i;
+    for(i=1; i<np; i++) {
+      MPI_Recv(&data, 1, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
+      printf("receive %d from %d\n", data, id);
+    }
   }
 
   MPI_Finalize();
