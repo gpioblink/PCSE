@@ -23,7 +23,7 @@ int main(int argc, char *argv[] )
 
   int a, b, c;
   MPI_Recv(&a, 1, MPI_INT, previd, 0, MPI_COMM_WORLD, &status);
-  b = id;
+  b = data;
   MPI_Recv(&c, 1, MPI_INT, nextid, 0, MPI_COMM_WORLD, &status);
   printf("I'm %d(=%d). Neighbor is %d(=%d) and %d(=%d). Average is %lf\n", id, b, previd, a, nextid, c, (a+b+c)/3.0);
 
