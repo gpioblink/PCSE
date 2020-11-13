@@ -14,10 +14,10 @@ int main(int argc, char *argv[] )
   MPI_Status status;
 
   if(id != 0) {
-    data = 3;
+    data = id * id;
     MPI_Send(&data, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);
   } else {
-    MPI_Recv(&data, 1, MPI_INT, 1, 0, MPI_COMM_WORLD, &status);
+    MPI_Recv(&data, 1, MPI_INT, MPI_ANY_SOURCE, 0, MPI_COMM_WORLD, &status);
     printf("receive %d from %d\n", data, id);
   }
 
