@@ -41,9 +41,9 @@ int main(int argc,char *argv[]) {
     printf("pi is approximately %.16f, Error is %.16f\n", mypi, fabs(mypi - PI25DT)/PI25DT);
   } else {
     sum = 0.0;
-    MPI_Send(&h, 1, MPI_DOUBLE, i, 0, MPI_COMM_WORLD);
-    MPI_Send(&idxs, 1, MPI_INT, i, 1, MPI_COMM_WORLD);
-    MPI_Send(&idxe, 1, MPI_INT, i, 2, MPI_COMM_WORLD);
+    MPI_Recv(&h, 1, MPI_DOUBLE, id, 0, MPI_COMM_WORLD, &status);
+    MPI_Recv(&idxs, 1, MPI_INT, id, 1, MPI_COMM_WORLD, &status);
+    MPI_Recv(&idxe, 1, MPI_INT, id, 2, MPI_COMM_WORLD, &status);
     startwtime = MPI_Wtime();
     for (i = idxs; i < idxe; i++) {
       x = h*((double)i - 0.5);
