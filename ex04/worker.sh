@@ -5,6 +5,8 @@ N=${2:-5}
 NB=${3:-16}
 echo "0 0" > $OUTPUT_NAME.dat
 
+echo "[$OUTPUT_NAME]"
+
 for i in 2 4 6 8 16 32 64
 do
 
