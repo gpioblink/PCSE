@@ -1,0 +1,2 @@
+export PATH=$PATH:/home/professor/nakasato/MPI/bin
+export LD_LIBRARY_PATH=/home/professor/nakasato/MPI/lib
