@@ -1,8 +1,8 @@
-process 4 finished for 0.249144 sec
-process 1 finished for 0.326762 sec
-process 0 finished for 0.408332 sec
-process 5 finished for 0.425296 sec
-process 3 finished for 0.422071 sec
-process 2 finished for 0.483039 sec
-process 7 finished for 0.407376 sec
-process 6 finished for 0.528321 sec
+process 6 finished for 0.283787 sec
+process 3 finished for 0.353952 sec
+process 2 finished for 0.244970 sec
+process 0 finished for 0.414824 sec
+process 7 finished for 0.440008 sec
+process 5 finished for 0.323678 sec
+process 4 finished for 0.484005 sec
+process 1 finished for 0.262973 sec

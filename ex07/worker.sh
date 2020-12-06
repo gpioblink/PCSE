@@ -1,8 +1,8 @@
 #!/bin/bash
 
 OUTPUT_NAME=${1:-data}
-N=${3:-5}
-echo "0 0" > $OUTPUT_NAME.dat
+N=${2:-5}
+echo "" > $OUTPUT_NAME.dat
 
 echo "[$OUTPUT_NAME]"
 
